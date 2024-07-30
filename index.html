@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  <div class="heading"><h2>Spli <br> tter</h2></div>
+  
+  <form action="get" id="form">
+    <section class="splitter__app">
+
+      <div class="app__left">
+        <div class="form__bill">
+          <label for="bill">Bill</label>
+          <input type="text" id="bill" name="bill" placeholder="0" required>
+        </div>
+        <div class="form__tip">
+          <label for="tip">Select Tip %</label>
+          <div class="tip__container">
+            <button class="tip-button">5%</button>
+            <button class="tip-button">10%</button>
+            <button class="tip-button">15%</button>
+            <button class="tip-button">25%</button>
+            <button class="tip-button">50%</button>
+            <input type="text" name="tip" placeholder="Custom"></input>
+          </div>
+        </div>
+        <div class="form__number">
+          <label for="people">Number of People</label>
+          <input type="text" name="people" placeholder="0" id="people" required>
+        </div>
+      </div>
+
+      <section class="splitter__calc">
+        <div class="calc__within">
+          <div class="calc__within__container">
+            <div class="tip-amount__text">
+              <h5>Tip Amount</h5>
+              <p>/ person</p>
+            </div>
+            <h1 class="calc-tip">$4.27</h1>
+          </div>
+          <div class="calc__within__container">
+            <div class="total-amount__text">
+              <h5>Total</h5>
+              <p>/ person</p>
+            </div>
+            <h1 class="calc-total">$32.27</h1>
+          </div>
+          <button action="Reset" class="reset">Reset</button>
+        </div>
+      </section>
+
+    </section>
+  </form>
+
+</body>
+</html>
