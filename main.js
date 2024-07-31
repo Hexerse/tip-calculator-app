@@ -17,7 +17,6 @@ let tipperPerson = 0;
 
 const handleBill = () => {
   billValue = parseFloat(bill.value);
-  console.log(bill.value);
 };
 
 const handlePeople = () => {
@@ -25,8 +24,11 @@ const handlePeople = () => {
 };
 
 const handleTip = (e) => {
+  const valueofTip = e.target.value
+  if (valueofTip !== ''){
   tipValue = parseFloat(e.target.value.replace("%", "") / 100);
-  
+  } else { tipValue = 0 }
+  console.log(valueofTip)
 };
 
 buttons.forEach((button) => {
@@ -58,7 +60,7 @@ const handleSubmit = (e) => {
   tipAmount(billValue, tipValue, peopleValue);
 };
 
-custom.addEventListener("keyup", handleTip);
-custom.addEventListener("keyup", handleSubmit)
+custom.addEventListener("input", handleTip);
+custom.addEventListener("input", handleSubmit);
 reset.addEventListener("click", resetHTML);
 form.addEventListener("submit", handleSubmit);
