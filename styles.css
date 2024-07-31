@@ -133,7 +133,7 @@ label {
 
 form {
   background-color: white;
-  
+
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
 }
@@ -143,10 +143,10 @@ section.splitter__app {
   flex-direction: column;
   margin: 1.5rem;
   gap: 2rem;
-  height: 100%;
+  height: fit-content;
 }
 
-.app__left{
+.app__left {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -162,16 +162,17 @@ section.splitter__app {
   gap: 0.8rem;
 }
 
-.tip__container button {
+.tip__container input[type="submit"] {
   border: none;
   background-color: var(--clr-Very-dark);
   border-radius: 5px;
   color: white;
   padding: 0.3rem;
   font-weight: var(--fw);
+  text-align: center;
 }
 
-.tip__container button:hover{
+.tip__container input:hover {
   transition: all 0.3s ease-out;
   background-color: var(--clr-strongcyan);
   color: var(--clr-Very-dark);
@@ -179,7 +180,15 @@ section.splitter__app {
   cursor: pointer;
 }
 
-.selected{
+.tip__container input:focus {
+  transition: all 0.3s ease-out;
+  background-color: var(--clr-strongcyan);
+  color: var(--clr-Very-dark);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.selected {
   background-color: var(--clr-strongcyan);
   color: var(--clr-Very-dark);
   transform: scale(1.05);
@@ -226,46 +235,42 @@ section.splitter__app {
   text-transform: uppercase;
 }
 
-
 .reset:hover {
   cursor: pointer;
   transition: all 1s ease;
   transform: scale(1.05);
 }
 
-@media (min-width:37.5rem){
-  
-section.splitter__app{ 
-  flex-direction: row;
-}
+@media (min-width: 37.5rem) {
+  section.splitter__app {
+    flex-direction: row;
+  }
 
-form{
-  height: fit-content;
-  border-radius: 2rem;
-  width: 80%;
-}
+  form {
+    height: fit-content;
+    border-radius: 2rem;
+    width: 80%;
+  }
 
-.app__left{
-  width: 50%;
-}
+  .app__left {
+    width: 50%;
+  }
 
-.splitter__calc{
-  width: 50%;
-  padding: 1.5rem 1.5rem 0 1.5rem;
-}
+  .splitter__calc {
+    width: 50%;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+  }
 
-.calc__within{
-  height: 100%;
-}
+  .calc__within {
+    height: 100%;
+  }
 
-.reset{
-  margin-top: auto;
-}
+  .reset {
+    margin-top: auto;
+  }
 
-.tip__container{
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-
+  .tip__container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

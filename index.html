@@ -26,12 +26,12 @@
         <div class="form__tip">
           <label for="tip">Select Tip %</label>
           <div class="tip__container">
-            <button class="tip-button">5%</button>
-            <button class="tip-button">10%</button>
-            <button class="tip-button">15%</button>
-            <button class="tip-button">25%</button>
-            <button class="tip-button">50%</button>
-            <input type="text" name="tip" placeholder="Custom"></input>
+            <input class="tip-button" name="tip" value="5%"  type="submit">
+            <input class="tip-button" name="tip" value="10%" type="submit">
+            <input class="tip-button" name="tip" value="15%" type="submit">
+            <input class="tip-button" name="tip" value="25%" type="submit">
+            <input class="tip-button" name="tip" value="50%" type="submit">
+            <input type="text" name="tip" placeholder="Custom" id="custom"></input>
           </div>
         </div>
         <div class="form__number">
@@ -47,21 +47,21 @@
               <h5>Tip Amount</h5>
               <p>/ person</p>
             </div>
-            <h1 class="calc-tip">$4.27</h1>
+            <h1 class="calc-tip">$0</h1>
           </div>
           <div class="calc__within__container">
             <div class="total-amount__text">
               <h5>Total</h5>
               <p>/ person</p>
             </div>
-            <h1 class="calc-total">$32.27</h1>
+            <h1 class="calc-total">$0</h1>
           </div>
-          <button action="Reset" class="reset">Reset</button>
+          <button action="Reset" class="reset" type="reset">Reset</button>
         </div>
       </section>
 
     </section>
   </form>
-
+<script src="./main.js"></script>
 </body>
 </html>
