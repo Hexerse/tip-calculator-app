@@ -3,6 +3,7 @@ const buttons = document.querySelectorAll(".tip-button");
 const custom = document.getElementById("custom");
 const bill = document.getElementById("bill");
 const people = document.getElementById("people");
+const reset = document.getElementById("reset");
 
 const calcTip = document.querySelector(".calc-tip");
 const totalPerson = document.querySelector(".calc-total");
@@ -14,16 +15,18 @@ let tipValue = 0;
 let billperPerson = 0;
 let tipperPerson = 0;
 
-const handleBill = (bill) => {
-  billValue = parseFloat(bill.target.value);
+const handleBill = () => {
+  billValue = parseFloat(bill.value);
+  console.log(bill.value);
 };
 
-const handlePeople = (people) => {
-  peopleValue = parseInt(people.target.value);
+const handlePeople = () => {
+  peopleValue = parseInt(people.value);
 };
 
 const handleTip = (e) => {
   tipValue = parseFloat(e.target.value.replace("%", "") / 100);
+  
 };
 
 buttons.forEach((button) => {
@@ -43,12 +46,19 @@ const changeAmt = (billperPerson, tipperPerson) => {
   totalPerson.innerHTML = `$ ${billperPerson} `;
 };
 
+const resetHTML = () => {
+  calcTip.innerHTML = `$ 0`;
+  totalPerson.innerHTML = `$ 0`;
+};
+
 const handleSubmit = (e) => {
   e.preventDefault();
+  handleBill();
+  handlePeople();
   tipAmount(billValue, tipValue, peopleValue);
 };
 
 custom.addEventListener("keyup", handleTip);
-const submit = form.addEventListener("submit", handleSubmit);
-const getBill = bill.addEventListener("focusout", handleBill);
-const peopleNum = people.addEventListener("keyup", handlePeople);
+custom.addEventListener("keyup", handleSubmit)
+reset.addEventListener("click", resetHTML);
+form.addEventListener("submit", handleSubmit);
