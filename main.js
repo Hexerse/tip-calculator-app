@@ -24,11 +24,12 @@ const handlePeople = () => {
 };
 
 const handleTip = (e) => {
-  const valueofTip = e.target.value
-  if (valueofTip !== ''){
-  tipValue = parseFloat(e.target.value.replace("%", "") / 100);
-  } else { tipValue = 0 }
-  console.log(valueofTip)
+  const valueofTip = e.target.value;
+  if (valueofTip !== "") {
+    tipValue = parseFloat(e.target.value.replace("%", "") / 100);
+  } else {
+    tipValue = parseFloat(0);
+  }
 };
 
 buttons.forEach((button) => {
@@ -36,11 +37,13 @@ buttons.forEach((button) => {
 });
 
 const tipAmount = (bill, tip, people) => {
-  if (bill && tip && people) {
-    billperPerson = bill / people;
-    tipperPerson = (bill * tip) / people;
-    changeAmt(billperPerson, tipperPerson);
+  console.log(tip);
+  if (!bill && !tip && !people) {
+    return;
   }
+  billperPerson = bill / people;
+  tipperPerson = (bill * tip) / people;
+  changeAmt(billperPerson, tipperPerson);
 };
 
 const changeAmt = (billperPerson, tipperPerson) => {
